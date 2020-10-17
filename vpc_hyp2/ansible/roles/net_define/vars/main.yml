@@ -1,0 +1,4 @@
+---
+# vars file for net_define
+ovs_l2_net: tenant121br_2
+ovs_l2_br: tenant121br_2

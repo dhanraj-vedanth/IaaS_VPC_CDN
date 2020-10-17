@@ -1,0 +1,12 @@
+---
+
+- name: Patience is virtue - Bridge and Network creation
+  hosts: 127.0.0.1
+  connection: local
+  
+  roles:
+    - /home/ece792/vpc/ansible/roles/test_role
+    - /home/ece792/vpc/ansible/roles/net_define
+          #    - /home/ece792/HW3/ansible/roles/vm_create
+
+

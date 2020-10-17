@@ -1,0 +1,16 @@
+---
+
+- name: Creating two VMs with user's requirements (Define in vars) - creating 1stVM
+  command: "sudo virt-install -n {{ item.dom_name }} -r {{ item.ram }} --vcpu={{ item.vcpu }} --cpu host --disk path=/var/lib/libvirt/images/{{ item.dom_name }}.img,size={{ item.disk }} --network network=default --network network={{ item.net1 }} --network network={{ item.net2 }} -c {{ item.ios_path }} -v"
+  with_items:
+     - { dom_name: "{{ dom_name1 }}", vcpu: "{{ vcpus }}", ram: "{{ ram }}", disk: "{{ disk }}", ios_path: "{{ ios_path }}", net1: "{{ internet }}", net2: "{{ ovs_l2_net }}" }
+
+- name: Installation of iperf and Wireshark on the VM
+  command: "python3 /home/ece792/HW3/ansible/roles/vm_create/files/main.py"
+
+- name: Cloning to create the second VM
+  command: "{{ item }}"
+  with_items:
+   - 'sudo virsh destroy {{ dom_name1 }}'
+   - 'sudo virt-clone --original {{ dom_name1 }} -n {{ dom_name2 }} --auto-clone'
+

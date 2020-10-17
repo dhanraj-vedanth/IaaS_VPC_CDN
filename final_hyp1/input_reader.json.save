@@ -1,0 +1,9 @@
+{
+    "subnet_nos":"3",
+    "subnet_dict": {"1":"10.0.0.0/24", "2":"11.0.0.0/24", "3":"12.0.0.0/24"},
+    "vm_nos":"2",
+    "new_dict": {"1": ["1","2","3], "2": ["1","2","3"]},
+    "Internet": "yes",
+    "Management": "yes"
+    c"Functional": {"Type1":"Yes","Type2":"No"}
+}

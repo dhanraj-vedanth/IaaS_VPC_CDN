@@ -1,0 +1,22 @@
+---
+
+dom_name1: an_h1
+dom_name2: an_h2
+ovs_l2_net: ovs_l2
+ovs_l2_br: ovs_l2
+
+
+ovs_l3_net: ovs_l3
+ovs_l3_br: ovs_l3
+
+ovs_nat_net: ovs_nat
+ovs_nat_br: ovs_nat
+
+
+vcpus: 2
+ram: 2048
+disk: 12
+
+
+internet: ovs_nat
+ios_path: /home/CentOS-7-x86_64-Minimal-1609-99.iso

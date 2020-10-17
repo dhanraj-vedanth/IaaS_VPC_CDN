@@ -1,0 +1,19 @@
+import os 
+import sys
+
+tenant_check = int(sys.argv[1])
+domain_name = sys.argv[2]
+each = int(sys.argv[3])
+subnet = sys.argv[4]
+# subnet_dict = sys.argv[5]
+
+
+os.system("docker run --name "+domain_name+" --cap-add=NET_ADMIN -itd main-vm")
+                print("docker run --name "+domain_name+" --cap-add=NET_ADMIN -itd main-vm")
+                os.system("ovs-docker add-port tenant" + str(tenant_check) + "br_" + str(each_subnet) + " "+"eth"+str(each_subnet)+" "+str(domain_name))
+                print("ovs-docker add-port tenant" + str(tenant_check) + "br_" + str(each_subnet) + " "+"eth"+str(each_subnet)+" "+str(domain_name))
+
+# for each_subnet in sub_list:
+print("sudo virsh attach-interface --domain " + str(domain_name) + " --type network --source tenant" + str(tenant_check) + "br_" + str(subnet))
+print(os.system("sudo virsh attach-interface --domain " + str(domain_name) + " --type network --source tenant" + str(tenant_check) + "br_" + str(subnet)))
+

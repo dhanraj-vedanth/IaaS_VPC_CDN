@@ -1,0 +1,8 @@
+FROM main-vm 
+RUN apt-get update
+RUN apt-get -y --force-yes install collectd
+RUN apt-get -y --force-yes install vim
+RUN apt-get update && sudo apt-get install influxdb
+RUN systemctl unmask influxdb.service
+RUN systemctl start influxdb
+RUN apt-get update && sudo apt-get install grafana

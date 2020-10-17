@@ -1,0 +1,6 @@
+---
+- name: Creating VM with user Req.
+  hosts: 127.0.0.1
+  tasks:
+  - name: Creating VM with one interface according to user's requirements
+    command: sudo virt-install -n autovm0 -r 1024 --vcpu=3 --cpu host --disk path=/var/lib/libvirt/images/autovm0.img,size=10 --network network=default --network network=ovs_nat -c /home/CentOS-7-x86_64-Minimal-1609-99.iso --noautoconsole

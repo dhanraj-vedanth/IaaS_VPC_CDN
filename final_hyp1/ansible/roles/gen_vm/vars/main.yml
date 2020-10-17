@@ -1,0 +1,5 @@
+---
+# vars file for gen_vm
+domain_name: tenant121vm3
+vcpu: 3
+image: tenant121vm3.img

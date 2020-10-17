@@ -1,0 +1,24 @@
+---
+
+
+- name: Defining the networks!
+  command: "sudo virsh net-define /etc/libvirt/qemu/networks/{{ item }}.xml"
+  with_items:
+   - "{{ ovs_l2_net }}"
+
+- name: Starting the networks! 
+  command: "sudo virsh net-start {{ item }}"
+  with_items:
+   - "{{ ovs_l2_net }}"
+
+     #- name: Making ovs_l3 actually L3
+     #  command: "sudo ip a add {{ l3_gateway }} dev {{ ovs_l3_net }}"
+
+     #- name: Making ovs_nat actually a NAT network (Pt 1)
+     #  command: "sudo ip a add {{ nat_gateway }} dev {{ ovs_nat_net }}"
+
+     #- name: Making ovs_nat actually a NAT network (Pt 2)
+     #  command: "iptables -t nat -A POSTROUTING -s {{ nat_subnet }} -j MASQUERADE"
+
+
+

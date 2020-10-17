@@ -1,0 +1,6 @@
+{"No of edge servers in Location 1 for RFC range 1-10": 1,
+"No of edge servers in Location 1 for RFC range 11-20": 2,
+"No of edge servers in Location 1 for RFC range 21-30": 1,
+"No of edge servers in Location 2 for RFC range 1-10": 1,
+"No of edge servers in Location 2 for RFC range 11-20": 1,
+"No of edge servers in Location 2 for RFC range 21-30": 1}

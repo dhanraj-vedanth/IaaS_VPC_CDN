@@ -1,0 +1,11 @@
+---
+
+- name: Patience is virtue pt2 - VM Creation!
+  hosts: 127.0.0.1
+  connection: local
+  
+  roles:
+    - /home/ece792/vpc/ansible/roles/gen_vm
+          #    - /home/ece792/HW3/ansible/roles/vm_create
+
+

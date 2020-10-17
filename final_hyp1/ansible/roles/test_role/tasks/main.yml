@@ -1,0 +1,22 @@
+---
+- name: Creating the damn bridge, using roles and other shizzzzzz.
+  command: 'sudo ovs-vsctl add-br {{ item }}'
+  with_items:
+   - "{{ ovs_l2_br }}"
+  register: result_bridge
+
+- name: Bringin up the bridge 
+  command: 'sudo ip link set {{ item }} up'
+  with_items:
+   - "{{ ovs_l2_br }}"
+
+- debug:
+    var: result_bridge.stdout_lines
+
+- name: Generation of XML file (L2 brige)
+  template:
+      src: "/home/ece792/vpc/ansible/roles/test_role/templates/ovs_l2.xml.j2"
+      dest: "/etc/libvirt/qemu/networks/{{ item.network }}.xml"
+  with_items:
+   - { name: "{{ ovs_l2_br }}", network: "{{ ovs_l2_net }}" }
+

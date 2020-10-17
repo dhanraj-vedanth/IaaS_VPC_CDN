@@ -1,0 +1,11 @@
+---
+# tasks file for gen_vm
+
+- name: Generating XML for the image
+  template:
+      src: "/home/ece792/vpc/ansible/roles/gen_vm/templates/vm_create.xml.j2"
+      dest: "/etc/libvirt/qemu/{{ domain_name }}.xml"
+
+
+
+
