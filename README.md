@@ -6,6 +6,9 @@ The goal is to implement edge services through content delivery networks with DN
 
 In our model, we have edge devices or nodes which are connected to edge servers, making up the CDN network that is offered to our customer the client. Hence the goal of is to create a multitenant architecture that is hosted by a number of VPCs. In order to find the closest CDN node (or edge server) to an edge client, ww use content based DNS routing to find the closest edge server with the relevant cached content. For example, Netflix is configured in such a way that, 3 http links are provided for every play of the video, to start storing video data stream into a buffer, which may vary in video resolution and data bit rate.
 
+
+<img src="./pictures/vpc_base.png">
+
 ---
 
 # Section 1 - VPC
@@ -20,17 +23,19 @@ Ex: 3 subnets were asked.
 
 The Python code is automated to generate the following architecture first:
 
-[Insert router_sg_image]
+<img src="./pictures/router_sg.png">
 
 Here the SG and Routers are namespaces, the SG namespace acts as the default gateway for every subnet ID specified by the tenant. The router allows inter-subnet communication within a single tenant. It has routes configured to every subnet from one another.
 
 Following this, the tenant is also asked if they require Internet connection, upon which a namespace called Internet is created, which enables internet connectivity for all the subnet gateways of the tenant.
 This Internet Namespace is connected to the Hypervisor, hosting the VPC.
 
-[Insert router_sg_internet_image]
+<img src="./pictures/router_sg_internet.png">
 
 After this step, the Tunnel Gateway namespaces, and OVS bridges for each subnet are created.
 For the case of #subnet 1- 3Vms, subnet 2- 2Vms, subnet 3- 1 Vm we see the following two figures depicting the steps toward creating the complete architecture of the VPC.
+
+<img src="./pictures/complete.png">
 
 ---
 ## Datapath:
