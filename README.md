@@ -1,3 +1,4 @@
+
 # Infrastructure and Edge Computing as a service
 
 ## Objective 
@@ -61,7 +62,17 @@ The Northbound interface for the customer in our case is the interface on the su
 
 --- 
 
+# Functional Features
+1. Broker server based load-balancing What is broker server based load-balancing?
+When a website domain name is entered in a web-browser of a host, the host is already aware of it’s local broker server. The broker server receives a publish/subscribe request for content and returns the edge server to which the data has to be published or subscribed from.
 
+2.  East to West Traffic
+We also plan to implement east to west traffic that depicts communication between nodes in a local area network that are normally placed horizontally inside a datacenter. This type of communication is going to be shown in our project by the communication between two edge servers. The following figure shows servers in a datacenter which apply east to west traffic by traversing through the leaf switches and spine switches.
+
+# Section 3 - Management Feature
+
+1. Performance Management Feature description: 
+	Performance management​ examines and monitors the current network efficiency and plans ahead for future changes or upgrades. While constantly monitoring the health of the network and searching for trends, network parameters are tracked and logged; these include data transmission rate (throughput), error rates, downtime/uptime, use-time percentages and response time to user and automated inputs or requests.
 
 
 
